@@ -28,6 +28,16 @@
     @include r($lg) {
       width: 5rem;
     }
+    @include r($tablet) {
+      width: 4rem;
+      top: 30px;
+    }
+    @media (max-width: 530px) {
+      width: 3rem;
+    }
+    @include r($phone) {
+      width: 2rem;
+    }
   }
 
   &::before {
@@ -44,6 +54,13 @@
   display: flex;
   gap: 40px;
   animation: scrolling 15s linear infinite;
+  @include r($phone) {
+    gap: 20px;
+  }
+  @media (max-width: 400px) {
+    gap: 30px;
+    animation: scrolling 8s linear infinite;
+  }
 }
 
 @keyframes scrolling {
@@ -67,5 +84,26 @@
   }
   @include r($lg) {
     width: calc(60vw / 4);
+  }
+  @include r($tablet) {
+    width: calc(60vw / 3);
+  }
+  @media (max-width: 680px) {
+    width: calc(70vw / 3);
+  }
+  @media (max-width: 530px) {
+    width: calc(90vw / 3);
+  }
+  @media (max-width: 460px) {
+    width: calc(80vw / 3);
+  }
+  @media (max-width: 430px) {
+    width: calc(90vw / 2);
+  }
+  @media (max-width: 400px) {
+    width: calc(70vw / 2);
+  }
+  @media (max-width: 380px) {
+    width: calc(80vw / 2);
   }
 }
