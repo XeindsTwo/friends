@@ -1,0 +1,64 @@
+.btn {
+  @include flex-align-center(10);
+  justify-content: center;
+  line-height: 1;
+  color: $white;
+  overflow: hidden;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-radius: 72px;
+  max-width: max-content;
+  background-color: $accent;
+  border: 1px solid transparent;
+  transition: background-color .4s, border .4s, color .4s, transform .6s;
+  @include r($tablet) {
+    padding: 13px 20px;
+  }
+
+  &:hover {
+    background-color: #9b84f0;
+    border-color: transparent;
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: $white;
+    border-color: $accent;
+
+    svg path {
+      stroke: $white;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border-color: rgba($white, .2);
+
+    &:hover {
+      background-color: transparent;
+      color: $white;
+      border-color: $accent;
+    }
+
+    &:focus {
+      background-color: $accent;
+      border-color: transparent;
+    }
+  }
+
+  &--dark {
+    background-color: rgba(#5E00FF, .25);
+    border-color: transparent;
+    color: #a494e3;
+
+    &:hover {
+      background-color: rgba(#5E00FF, .30);
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+    }
+  }
+}
